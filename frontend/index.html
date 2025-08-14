@@ -2938,9 +2938,8 @@
                 sendBtn.disabled = true;
                 modeSelector.disabled = true;
 
-                // Add user message with mode indicator
-                const modeLabel = mode === 'speed' ? 'Fast Mode' : mode === 'deep_dive' ? 'Deep Mode' : 'Standard';
-                this.addMessage('user', `${question} <span style="font-size: 0.8rem; opacity: 0.7; background: var(--bg-tertiary); padding: 2px 8px; border-radius: 12px; margin-left: 8px;">${modeLabel}</span>`);
+                // Add user message (clean, without mode indicator)
+                this.addMessage('user', question);
 
                 // Clear input and reset height
                 chatInput.value = '';
