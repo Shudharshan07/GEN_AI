@@ -2680,6 +2680,10 @@
                 const chatForm = document.getElementById('chatForm');
                 const chatInput = document.getElementById('chatInput');
 
+                console.log('Initializing event listeners...');
+                console.log('chatForm found:', !!chatForm);
+                console.log('chatInput found:', !!chatInput);
+
                 // Drag and drop
                 dropZone.addEventListener('click', () => fileInput.click());
                 dropZone.addEventListener('dragover', this.handleDragOver.bind(this));
@@ -2693,7 +2697,23 @@
                 processBtn.addEventListener('click', this.processDocuments.bind(this));
 
                 // Chat form
-                chatForm.addEventListener('submit', this.handleChatSubmit.bind(this));
+                if (chatForm) {
+                    chatForm.addEventListener('submit', this.handleChatSubmit.bind(this));
+                    console.log('Form submit listener attached');
+                } else {
+                    console.error('chatForm element not found!');
+                }
+
+                // Also add listener to send button as backup
+                const sendBtn = document.getElementById('sendBtn');
+                if (sendBtn) {
+                    sendBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        console.log('Send button clicked');
+                        this.askQuestion();
+                    });
+                }
+
                 chatInput.addEventListener('input', this.autoResizeTextarea.bind(this));
 
                 // Action buttons
@@ -2895,6 +2915,7 @@
             }
 
             handleChatSubmit(e) {
+                console.log('handleChatSubmit called');
                 e.preventDefault();
                 this.askQuestion();
             }
