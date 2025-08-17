@@ -6,6 +6,7 @@
 
 **Transform your documents into interactive learning experiences with AI**
 
+
 [![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat-square&logo=python)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.68+-green?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=flat-square&logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
